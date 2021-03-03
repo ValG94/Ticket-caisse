@@ -10,35 +10,41 @@ public class Main {
         // On déclare un scanner pour lire les entrées de la console
         Scanner sc = new Scanner(System.in);
 
-        //On affiche le plat commandé
-        System.out.println("Plat # : ");
-        String typePlat = sc.nextLine();
+        //Nombre de convives
+        System.out.println("Nombre de convives");
+        int nombreConvive = sc.nextInt();
         sc.nextLine();
+        // Montant total de l'addition
+        float prixTotal=0;
 
-        // On affiche la quantité
-        System.out.println("Quantité");
-        int quantitePlat = sc.nextInt();
-        sc.nextLine();
+        //Boucle
+        for (int i = 1; i<=nombreConvive; i++) {
 
-        // On affiche le prix unitaire de chaque plat
-        System.out.println("Prix unitaire");
-        float prixUnitaire = sc.nextFloat();
-        sc.nextLine();
+            //On affiche les plats commandés
+            System.out.println("Plat #" + i);
+            String typePlat = sc.nextLine();
 
-        // On affiche le prix global pour chaque ligne
-        float montantTotal = (quantitePlat * prixUnitaire);
-        System.out.println("Total = " + montantTotal + "€");
+            // On affiche la quantité
+            System.out.println("Quantité");
+            int quantitePlat = sc.nextInt();
+            sc.nextLine();
 
-        if (quantitePlat <= 0) {
-            System.out.println("Pas de commande");
-        } else ;
-        {
-            System.out.println(quantitePlat + " " +typePlat + " " + prixUnitaire + "€");
+            // On affiche le prix unitaire de chaque plat
+            System.out.println("Prix unitaire");
+            float prixUnitaire = sc.nextFloat();
+            sc.nextLine();
+
+            // On affiche le prix global pour chaque ligne
+            float montantTotal = (quantitePlat * prixUnitaire);
+            System.out.println("Total = " + montantTotal + "€");
+
+            // On affiche le montant total de la facture
+            prixTotal= prixTotal + montantTotal;
+
         }
-
+        System.out.println("Prix à régler :" + prixTotal + "€");
         // On affiche un message de remerciement "Merci de votre visite & à bientôt"
         System.out.println("Merci de votre visite et à bientôt !");
-        sc.nextLine();
         // On ferme le scanner
         sc.close();
 
