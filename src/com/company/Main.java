@@ -16,17 +16,19 @@ public class Main {
         sc.nextLine();
         // Montant total de l'addition
         float prixTotal=0;
+        int quantitePlat =0;
+        String typePlat = sc.nextLine();
 
         //Boucle
         for (int i = 1; i<=nombreConvive; i++) {
 
             //On affiche les plats commandés
             System.out.println("Plat #" + i);
-            String typePlat = sc.nextLine();
+            typePlat = sc.nextLine();
 
             // On affiche la quantité
             System.out.println("Quantité");
-            int quantitePlat = sc.nextInt();
+            quantitePlat = sc.nextInt();
             sc.nextLine();
 
             // On affiche le prix unitaire de chaque plat
@@ -42,9 +44,14 @@ public class Main {
             prixTotal= prixTotal + montantTotal;
 
         }
-        System.out.println("Prix à régler :" + prixTotal + "€");
+
+        System.out.println("______________________________Facture___________________________");
+
+        System.out.println("Montant total à régler : " + prixTotal + "€");
         // On affiche un message de remerciement "Merci de votre visite & à bientôt"
         System.out.println("Merci de votre visite et à bientôt !");
+
+        System.out.println("_____________________________Fin Facture________________________");
         // On ferme le scanner
         sc.close();
 
