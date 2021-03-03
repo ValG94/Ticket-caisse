@@ -14,10 +14,14 @@ public class Main {
         System.out.println("Nombre de convives");
         int nombreConvive = sc.nextInt();
         sc.nextLine();
+
         // Montant total de l'addition
         float prixTotal=0;
         int quantitePlat =0;
         String typePlat = sc.nextLine();
+
+        // Impression du ticket de caisse
+        String ticketCaisse="";
 
         //Boucle
         for (int i = 1; i<=nombreConvive; i++) {
@@ -42,16 +46,18 @@ public class Main {
 
             // On affiche le montant total de la facture
             prixTotal= prixTotal + montantTotal;
-
+            ticketCaisse = (quantitePlat + "x " + typePlat + "    "+prixUnitaire+"€") + "\n"+ ticketCaisse;
         }
 
-        System.out.println("______________________________Facture___________________________");
-
+        System.out.println("____________________________Facture_________________________");
+        System.out.println("| PLATS                     |        TOTAL                  ");
+        System.out.println("____________________________________________________________");
+        System.out.printf(  "%30s\n", ticketCaisse);
         System.out.println("Montant total à régler : " + prixTotal + "€");
         // On affiche un message de remerciement "Merci de votre visite & à bientôt"
         System.out.println("Merci de votre visite et à bientôt !");
 
-        System.out.println("_____________________________Fin Facture________________________");
+        System.out.println("_____________________________BONNE JOURNEE______________________");
         // On ferme le scanner
         sc.close();
 
