@@ -1,6 +1,8 @@
 package com.company;
 
 import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.Scanner;
 import java.util.TimeZone;
 
@@ -22,6 +24,7 @@ public class Main {
 
         // Impression du ticket de caisse
         String ticketCaisse="";
+
 
         //Boucle
         for (int i = 1; i<=nombreConvive; i++) {
@@ -49,15 +52,20 @@ public class Main {
             ticketCaisse = (quantitePlat + "x " + typePlat + "    "+prixUnitaire+"€") + "\n"+ ticketCaisse;
         }
 
-        System.out.println("____________________________Facture_________________________");
-        System.out.println("| PLATS                     |        TOTAL                  ");
-        System.out.println("____________________________________________________________");
+        //Affiche la date et l'heure du ticket
+        DateFormat format =new SimpleDateFormat("yyyy/MM/dd  HH:mm:ss");
+        Date date= new Date();
+        System.out.println(format.format(date));
+
+        System.out.println("____________________________Facture____________________");
+        System.out.println("| PLATS                     |   TOTAL                  ");
+        System.out.println("_______________________________________________________");
         System.out.printf(  "%30s\n", ticketCaisse);
+
         System.out.println("Montant total à régler : " + prixTotal + "€");
         // On affiche un message de remerciement "Merci de votre visite & à bientôt"
         System.out.println("Merci de votre visite et à bientôt !");
-
-        System.out.println("_____________________________BONNE JOURNEE______________________");
+        System.out.println("_______________________BONNE JOURNEE___________________");
         // On ferme le scanner
         sc.close();
 
