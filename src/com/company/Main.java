@@ -49,7 +49,7 @@ public class Main {
 
             // On affiche le montant total de la facture
             prixTotal= prixTotal + montantTotal;
-            ticketCaisse = (quantitePlat + "x " + typePlat + "    "+prixUnitaire+"€") + "\n"+ ticketCaisse;
+            ticketCaisse = (quantitePlat + "x " + "\t"+ typePlat + "\t" + prixUnitaire+"€") + "\n"+ ticketCaisse;
         }
 
         //Affiche la date et l'heure du ticket

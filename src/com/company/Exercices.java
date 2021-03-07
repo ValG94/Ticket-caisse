@@ -72,7 +72,12 @@ public class Exercices {
     private static void exo4(Scanner sc){
         // Définir si une année est bisextille ou pas
         System.out.println("Veuillez saisir votre année");
-
+        int year= sc.nextInt();
+        if (isLeapYear(year)){
+            System.out.println(year + " est bisextille");
+        } else {
+            System.out.println(year +" n'est pas bisextille");
+        }
     }
 
 
@@ -82,7 +87,7 @@ public class Exercices {
 
         // Affichage du menu de mes exercices
         System.out.println("----------------Menu des exercices-------------");
-        System.out.println("1. Présentez-vous" + '\n' + "2. Calculer un prix TTC" + '\n'+ "3. Calculer la factorielle d'un nombre");
+        System.out.println("1. Présentez-vous" + '\n' + "2. Calculer un prix TTC" + '\n'+ "3. Calculer la factorielle d'un nombre" + '\n' + "4. L'année est-elle bisextille ?");
         System.out.println("------------------------------------------------");
         System.out.println("Faites votre choix : ");
         int n=sc.nextInt();
@@ -92,6 +97,7 @@ public class Exercices {
             case 1:{exo1(sc); break;}
             case 2:{exo2(sc); break;}
             case 3:{exo3(sc); break;}
+            case 4:{exo4(sc);break;}
               default:{System.out.println("Il faut rentrer une valeur");}
         };
         // On ferme le scanner
